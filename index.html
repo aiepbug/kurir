@@ -1,0 +1,214 @@
+	<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kurir</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="suggest.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#services">Services</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <h1 class="mb-1 text-light">O2O Kurir</h1>
+        <h3 class="mb-5">
+          <em>Layanan kurir orang <label class="badge badge-danger">Terpercaya!</label></em>
+        </h3>
+    <div class="input-group col-lg-10 mx-auto">  
+         <span class="badge badge-default col-lg-3">Dari</span>
+         <span class="badge badge-default col-lg-3">Ke</span>
+         <span class="badge badge-danger"></span>
+    </div>    
+    <div class="input-group col-lg-10 mx-auto">
+         <input id="asal" type="text" placeholder="Bandung" title="Kota asal" class="form-control" autocomplete="off">
+         <input id="tujuan" type="text" placeholder="Jakarta" title="Kota tujuan" class="form-control" autocomplete="off">
+         <input id="tanggal" type="date" aria-label="" class="form-control">
+    </div>		
+    <div class="input-group col-lg-10 mx-auto">
+      <div class="col-lg-4">
+          <ul id="asal-h" class=" suggest"></ul>
+      </div>
+      <div class="col-lg-4">    
+          <ul id="tujuan-h" class="suggest"></ul>
+      </div>
+      <div class="col-lg-4">    
+          <span class=""></span>
+      </div>
+    </div>
+        <a class="btn btn-warning btn-xl text-white" id="cari" href="#result">Cari kurir</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- About -->
+    <section class="content-section bg-light" id="about">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div id="result">
+                <h2>Lorem Ipsum</h2>
+              <p class="lead mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div id="json">
+                  <p>
+                      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Lihat json </a>
+                  </p>
+                 <div class="collapse" id="collapseExample">
+                   <div id="isi-json"class="card card-body"> Anim pariatur. </div>
+                 </div>
+              </div>
+            <table id="result-details" class="table table-bordered"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="#">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Your Website 2018</p>
+      </div>
+      	<div id="the-basics">
+ 		 	<input class="typeahead" type="text" placeholder="States of USA">
+		</div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+  </body>
+
+</html>
+<script type="text/javascript">
+function setVal(a,b){
+    $('#'+b).val(a)
+}
+var server_api = '../backend/api/'
+$("body").click(function(){
+  $("#asal-h").css("display","none")
+  $("#tujuan-h").css("display","none")
+});
+$("#asal-h").css("display","none")
+$("#tujuan-h").css("display","none")
+$("#json").css("display","none")
+
+$("#asal").keyup(function() {
+  $.post( server_api+"ambilKota", { kota: $("#asal").val() })
+    .done(function( data ) {
+      $("#asal-h").css("display","block")
+      var obj = jQuery.parseJSON(data)
+      $('#asal-h').empty()
+      $.each(obj, function(i, item) {
+           $('#asal-h').append(
+            "<li><a id="+item.iata_code+" href='#!' onclick=setVal(this.id,'asal')><div class='bandara'>"+item.name+"</div><div class='kota'>"+item.municipality+"</div></a><hr></li>");
+      });
+  });
+});
+$("#tujuan").keyup(function() {
+  $.post( server_api+"ambilKota", { kota: $("#tujuan").val() })
+    .done(function( data ) {
+      $("#tujuan-h").css("display","block")
+      var obj = jQuery.parseJSON(data)
+      $('#tujuan-h').empty()
+      $.each(obj, function(i, item) {
+           $('#tujuan-h').append(
+            "<li><a id="+item.iata_code+" href='#!' onclick=setVal(this.id,'tujuan')><div class='bandara'>"+item.name+"</div><div class='kota'>"+item.municipality+"</div></a><hr></li>");
+      });
+  });
+});
+$('#cari').click(function(){
+  if($('#tanggal').val()==''){alert("Tanggal kosong");return false;}
+    $.get( server_api+"ambilJadwal/",{ ap: $("#asal").val()+'.'+$("#tujuan").val(),dt:$('#tanggal').val()})
+      .done(function( data ) {
+        $('#result').css('display','none')
+        $('#result-details').html('')
+        $('#result-details-header').html('Hasil pencarian')
+        $('#result-details').append("<tr><td>Nama</td><td>Waktu Berangkat</td><td>Telp</td></tr>")
+        var obj = jQuery.parseJSON(data)
+        console.log(obj)
+        $("#json").css("display","block")
+        $("#isi-json").text(data)
+        if(obj.error==0)
+        {
+          $('#result-details-header').html('Hasil pencarian tidak ada')
+        }
+        else
+        {
+          $.each(obj, function(i, item) {
+            $('#result-details').append("<tr><td><a href='#!'>"+item.firstName+" "+item.lastName+"</a> "+rating(item.ratingUser)+"</td><td>"+item.departure+"</td><td>"+item.phone+"</td></tr>");
+          });
+        }
+
+    });
+});
+function rating(r){
+  return '<image src="img/'+r+'.png" />';
+}
+</script>
